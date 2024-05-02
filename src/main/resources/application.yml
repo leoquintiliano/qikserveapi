@@ -1,0 +1,29 @@
+server:
+  port: 5001
+  error:
+    include-message: always
+    include-binding-errors: always
+
+qikserve:
+  api:
+    url: localhost:8081/
+    scheme: http
+    path: products
+
+api:
+  security:
+    token:
+      secret: ${JWT_SECRET:my-secret-key}
+
+spring:
+  application:
+    name: QikServe
+
+  data:
+    mongodb:
+      username: admin
+      password: password
+#      database: admin
+      port: 27018
+      host: localhost
+      authentication-database: admin

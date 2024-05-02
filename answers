@@ -1,0 +1,19 @@
+1. It took me 2 evenings to finish it up. I would dockerize the API if i had any time left, i'd also add some unit tests, and implement the security layer.
+
+2. The sequenced collections were improved on Java 21 but i didn't use this version. This solution API is currently using Java 17 instead. This version allows us to access specific positions as the first or last. We can see it in the following example:
+
+List<Integer> list = new ArrayList<Integer>();
+list.add(0);
+list.add(1);
+list.add(2);
+// Fetch the first element (element at index 0)
+int firstElement = list.getFirst();
+// Fetch the last element
+int lastElement = list.getLast();
+
+3. In my opinion the most difficult part was thinking how to send the additional or promotional values to be calculated and then persist it into the database. Once the database data are concurrent of the available list of the Wiremock
+
+4. In case of production deploy i could assume New Relic to track down the possible issues that could happen. It's a mighty observability tool among others.
+
+5. Implementing it using the proper architecture to separate the business rules, logic and every single component in its own layer could provide a way of enhancing the Wiremock. Using Clean architecture or  Hexagonal one would help a lot
+
